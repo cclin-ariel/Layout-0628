@@ -1,33 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
   <title>Frontend Mentor | Stats preview card component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: hsl(233, 47%, 7%);
+      min-width: 375px;
+      min-height: 890px;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+
+    }
+
+    .container {
+      background-color: hsl(244, 38%, 16%);
+      border-radius: 10px;
+
+      max-width: 1210px;
+      min-height: 500px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap-reverse;
+      justify-content: center;
+    }
+
+    .text-area {
+      box-sizing: border-box;
+      width: 50%;
+      padding: 50px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+    }
+
+    .photo-area {
+      box-sizing: border-box;
+      width: 50%;
+      background-image: url(./images/image-header-desktop.jpg);
+      background-size: auto 100%;
+      background-repeat: no-repeat;
+      border-radius: 0 10px 10px 0;
+      position: relative;
+    }
+
+  
+
+      .photo-area:before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: hsla(277, 61%, 63%, 0.877);
+        position: absolute;
+        opacity: 0.8;
+        border-radius: 0 10px 10px 0;
+
+      }
+
+      .text-area h1 {
+        color: hsl(0, 0%, 100%);
+        font-family: 'Inter', sans-serif;
+        font-size: 40px;
+      }
+
+      .text-area h1 span {
+        color: hsla(277, 61%, 63%, 0.877);
+      }
+
+      p {
+        color: hsla(0, 0%, 100%, 0.75);
+        font-family: 'Lexend Deca', sans-serif;
+
+      }
+
+      .socialMedia-data {
+        color: aliceblue;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+
+      .number {
+        font-size: 25px;
+        font-weight: 700;
+      }
+
+      .category {
+        color: rgba(226, 222, 222, 0.753);
+        font-family: 'Lexend Deca', sans-serif;
+        font-size: 8px;
+        text-transform: uppercase;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+        padding-right: 50px;
+
+      }
+
+
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        width: 100%;
+        color: hsla(0, 0%, 100%, 0.6);
+        bottom: 0px;
+        position: fixed;
+        background-color: hsl(233, 47%, 7%);
+
+      }
+
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+      @media screen and (max-width: 890px) {
+      .photo-area {
+        border-radius: 10px 10px 0 0;
+      }
+      @media screen and (max-width:750px),
+      (orientation: portrait) {
+        body {
+          min-height: 1000px;
+        }
+
+        .container {
+          margin: 80px auto;
+          width: 90%;
+          flex-wrap: wrap-reverse;
+        }
+
+        .text-area {
+          width: 100%;
+          padding: 50px 25px;
+          text-align: center;
+          justify-content: space-around;
+        }
+
+        .text-area p{
+          padding: 25px 10px;
+          line-height: 30px;
+          letter-spacing: 2px;
+        }
+
+        .socialMedia-data {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .category {
+          padding: 2px 0;
+        }
+
+        .socialMedia-dayaItem {
+          padding: 17px 0;
+        }
+
+        .photo-area {
+          width: 100%;
+          min-width: 338px;
+          min-height: 300px;
+          background-image: url(./images/image-header-mobile.jpg);
+          background-size: 100% auto;
+          background-repeat: no-repeat;
+          /* border: 10px 10px 0 0; */
+        }
+
+        .photo-area:before {
+          border-radius: 10px 10px 0 0;
+        }
+      }
   </style>
 </head>
+
 <body>
-
-  Get insights that help your business grow.
-
-  Discover the benefits of data analytics and make better decisions regarding revenue, customer 
-  experience, and overall efficiency.
-
-  10k+ companies
-  314 templates
-  12m+ queries
+  <div class="container">
+    <div class="text-area">
+      <h1>Get <span>insights</span> that help your business grow.</h1>
+      <p>Discover the benefits of data analytics and make better decisions regarding revenue, customer
+        experience, and overall efficiency.
+      </p>
+      <div class="socialMedia-data">
+        <div class="socialMedia-dayaItem">
+          <div class="number">10k+ </div>
+          <div class="category">companies</div>
+        </div>
+        <div class="socialMedia-dayaItem">
+          <div class="number">314 </div>
+          <div class="category">templates</div>
+        </div>
+        <div class="socialMedia-dayaItem">
+          <div class="number">12M+ </div>
+          <div class="category">queries</div>
+        </div>
+      </div>
+    </div>
+    <div class="photo-area"></div>
+  </div>
 
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">cc Lin</a>.
   </div>
 </body>
+
 </html>
